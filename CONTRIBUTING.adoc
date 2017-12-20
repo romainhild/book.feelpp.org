@@ -1,0 +1,68 @@
+= Contributing to the Feel++ book
+include::includes/header.adoc[]
+
+
+== Directory tree
+
+
+All asciidoc manuals are conserved in the `docs` directory.
+
+IMPORTANT: All directories prefixed with underscore `_` are related 
+to jekyll, a static web generator. Avoid mixing asciidoc files with
+these directories.
+
+Manual directories are organized by categories as you can see on the main
+pages.  For each category of book, there is a directory containing a file
+`list/adoc` which list book covers, and a `README.adoc` for displaying this
+list.
+
+
+== Writing documentations
+
+=== Headers
+
+This is an example of asciidoc file.
+
+[source,adoc]
+----
+= Page title
+// Don't put authors here! (see CONTRIBUTING)
+//*******************************************
+:page-layout: default
+:page-permalink: /toolbox/
+:page-root: /
+:doctype: book
+:docinfo: shared
+:imagesdir: /images/
+:sources: ../../
+// Keep this include header at the end! (see CONTRIBUTING)
+include::docs/includes/header.adoc[]
+//*******************************************
+
+Here goes the page content ...
+----
+
+This are jekyll specific header variables:
+
+- `page-layout` define the page template (`default`, `manual`)
+- `page-permalink`  define the true URL for the website
+- `page-root` relative path to the git repository root
+
+IMPORTANT: Don't forget the last `/` for the permalink.
+
+We store generic adoc header in the `docs/includes/header.adoc`.
+
+IMPORTANT: `docs/includes/header.adoc` should always be present, at the end of the
+header.
+
+You can have a look to the `docs/includes/headers/` directory for sub headers.
+We define in these files all generics variables that could/should be use in all
+asciidoc pages.
+
+IMPORTANT: You should keep this way of writing! Files might be included externally
+by another books!
+
+=== Authors
+
+IMPORTANT: Don't define authors, they are already sets in the `header.adoc` file.
+See previous section.

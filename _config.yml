@@ -16,9 +16,7 @@
 title: The Feel++ Book
 email: christophe.prudhomme@feelpp.org
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  This is the Feel++ Book
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: feelpp
@@ -29,32 +27,32 @@ markdown: kramdown
 #theme: minima
 theme: jekyll-theme-cayman
 
-gems:
+assets:
+  sources:
+    - _assets/fonts
+
+plugins:
   - jekyll-feed
   - jekyll-asciidoc
+
+include:
+  - docs/man/README.adoc
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - "0*"
   - vendor
-  - 00-preface
-  - 01-installation
-  - 02-docker
-  - 03-modeling
-  - 04-learning
-  - 05-applications
-  - 06-programming
-  - 07-quickref
-  - 08-faq
-  - 09-annexes
   - "math/*.tex"
+  - math/fem/auto/
   - "math/*.adoc"
   - "math/*.html"
   - math/auto
   - book.html
   - book.pdf
-  - "auto/*"
+  - /auto/
+  - docs/man/0*
+  - docs/man/l*
 
 asciidoctor:
   base_dir: :docdir
@@ -62,8 +60,9 @@ asciidoctor:
   attributes:
     - allow-uri-read=true
     - idseparator=_
-    - source-highlighter=coderay
-    - pygments-css=
-    - pygments-stylesheet=t
+    - source-highlighter=pygments
+    - pygments-style=manni
+    - pyggments-css=class
+    - pygments-linenums-mode=inline
     - icons=font
     - imagesdir=/images
